@@ -29,7 +29,7 @@
                         <div class="w-100 d-block bg-white shadow-lg rounded my-5">
                             <div class="row">
                                 <div class="col-lg-5 d-none d-lg-block rounded-left">
-                                    <img src="../imagen/logo.jpg" height="558" width="500"> <!--475 x 558-->
+                                    <img src="../imagen/logo.jpg" height="558" width="500"> <!--475 x 558  aaron_carrito-->
                                 </div>
                                 <div class="col-lg-7">
                                     <div class="p-5">
@@ -42,10 +42,10 @@
                                         <p class="text-muted mb-4">Ingrese su dirección de correo electrónico y contraseña para acceder al panel de administración.</p>
                                         <form class="user">
                                             <div class="form-group">
-                                                <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
+                                                <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Ingresar Email">
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                                <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Contraseña">
                                             </div>
                                             <a href="" class="btn btn-success btn-block waves-effect waves-light"> acceder </a>
 
@@ -73,7 +73,7 @@
                                         <div class="row mt-4">
                                             <div class="col-12 text-center">
                                                 <p class="text-muted mb-2"><a href="pages-recoverpw.html" class="text-muted font-weight-medium ml-1">Olvide mi contraseña?</a></p>
-                                                <p class="text-muted mb-0">Don't have an account? <a href="pages-register.html" class="text-muted font-weight-medium ml-1"><b>Sign Up</b></a></p>
+                                                <p class="text-muted mb-0">No Tienes una Cuenta? <a href="pages-register.html" class="text-muted font-weight-medium ml-1"><b>Crear Cuenta</b></a></p>
                                             </div> <!-- end col -->
                                         </div>
                                         <!-- end row -->
