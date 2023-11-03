@@ -1,3 +1,7 @@
+<?php
+include("include/conexion.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +27,7 @@
                         <h4>REGISTRO DE USUARIOS</h4>
                         <div class="card">
                             <div class="card-body">
-                                <form action="operaciones/registrar_usuario.php" method="post">
+                                <form action="operaciones/registrar_usuario.php" method="post" enctype="multipart/form-data">
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-md-3 col-sm-12">DNI:</label>
                                         <input type="number"
@@ -65,6 +69,24 @@
                                         name="fechaNa"
                                         placeholder=""
                                         class="form-control col-lg-3 col-md-3 col-sm-12" required>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-md-3 col-sm-12">Rol:</label>
+                                        <select name="id_rol" id="">
+                                            <option value=""></option>
+                                            <?php
+                                            $b_roles = "SELECT * FROM roles";
+                                            $r_b_roles = mysqli_query($conexion, $b_roles);
+                                            while ($datos_roles = mysqli_fetch_array($r_b_roles)) { ?>
+                                                <option value="<?php echo $datos_roles['id'];?>"><?php echo $datos_roles['nombre']?></option>
+                                            <?php }
+                                            ?>
+                                            <option value="3">Cliente</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-md-3 col-sm-12">Foto:</label>
+                                        <input type="file" name="foto" placeholder="" class="form-control col-lg-3 col-md-3 col-sm-12" required accept="image/*">
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-md-3 col-sm-12"></label>
