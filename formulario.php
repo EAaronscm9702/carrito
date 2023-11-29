@@ -49,7 +49,32 @@ include("include/conexion.php");
                                             <th>Rol</th>
                                         </tr>
                                     </thead>
-                                    <tbody></tbody>
+                                    <tbody>
+                                        <?php
+                                            include('include/conexion.php');
+
+                                            $consulta = "SELECT * FROM usuario";
+                                            $ejecutar = mysqli_query($conexion, $consulta);
+                                            $contador = 0;
+                                            while ($respuesta = mysqli_fetch_array($ejecutar)) {
+                                                $contador = 1;
+                                                # code...
+                                                echo "<tr>";
+                                                    echo "<td>".$contador."</td>";
+                                                    echo "<td>".$respuesta['foto']."</td>";
+                                                    echo "<td>".$respuesta['dni']."</td>";
+                                                    echo "<td>".$respuesta['apellidos_nombres']."</td>";
+                                                    echo "<td>".$respuesta['correo']."</td>";
+                                                    echo "<td>".$respuesta['telefono']."</td>";
+                                                    echo "<td>".$respuesta['direccion']."</td>";
+                                                    echo "<td>".$respuesta['activo']."</td>";
+                                                    echo "<td>".$respuesta['fecha_nacimiento']."</td>";
+                                                    echo "<td>".$respuesta['id_rol']."</td>";
+                                                    echo "<td><button class='btn btn-success'>EDITAR</button><button class='btn btn-danger'>BORRAR</button></td>";
+                                                echo "</tr>";
+                                            }
+                                        ?>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>

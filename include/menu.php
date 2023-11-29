@@ -60,7 +60,7 @@
                 <ul class="metismenu list-unstyled" id="side-menu">
                     <li class="menu-title">Menú</li>
                     <li>
-                        <a href="registro.php">
+                        <a href="formulario.php">
                         <img src="imagen/a.png" alt="" height="15" width="19">
                         Inicio</a>
                     </li>
