@@ -23,11 +23,11 @@
                         <h4>REGISTRO DE CLIENTES</h4>
                         <div class="card">
                             <div class="card-body">
-                                <form action="operaciones/registrar_usuario.php" method="post">
+                                <form action="operaciones/registrar_cliente.php" method="post">
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-md-3 col-sm-12">RUC Y DNI:</label>
                                         <input type="number"
-                                        name="rudni"
+                                        name="rucdni"
                                         placeholder=""
                                         class="form-control col-lg-3 col-md-3 col-sm-12" required>
                                     </div>
