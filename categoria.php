@@ -1,41 +1,67 @@
+<?php
+include("include/conexion.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="plantilla/Admin/vertical/assets/css/bootstrap.min.css" type="text/css"/>
+    <title>Pedidos</title>
+    <link href="plantilla/Admin/vertical/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/theme.min.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-    <?php 
-    //lenguaje php
+    <?php
+    // Lenguaje en php
     include("include/menu.php");
+
     ?>
 
-    <!--INICIO CONTENIDO-->
+    <!-- INICIO DE CONTENIDO -->
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <h4>SISTEMA</h4>
+                        <?php include("include/modal_frm_reg_categoria.php"); ?>
+                        <table id="basic-datatable" class="table dt-responsive nowrap">
+                            <thead>
+                                <th>Nro</th>
+                                <th>Categoria</th>
+                                
+
+
+
+                            </thead>
+                            <tbody>
+                                <?php
+
+                                $consulta = "SELECT * FROM categoria";
+                                $ejecutar = mysqli_query($conexion, $consulta);
+                                $contador = 0;
+
+                                while ($respuesta = mysqli_fetch_array($ejecutar)) {
+                                    $contador += 1;
+                                    echo "<tr>";
+                                    echo "<td>" . $contador . "</td>";
+                                    echo "<td>" . $respuesta['nombre'] . "</td>";
+                                    echo "<td><button class='btn btn-success'>Editar</button> <button class='btn btn-danger'>Eliminar</button></td>";
+
+                                    echo "</tr>";
+                                }
+
+                                ?>
+                            </tbody>
+                        </table>
+
                         <div class="card">
                             <div class="card-body">
-                                <form action="operaciones/registrar_usuario.php" method="post">
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12">NOMBRE:</label>
-                                        <input type="text"
-                                        name="nomb"
-                                        placeholder=""
-                                        class="form-control col-lg-9 col-md-9 col-sm-12" required>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12"></label>
-                                        <button type="submit" class="btn btn-success">Guardar</button>
-                                    </div>
-                                </form>
+
                             </div>
                         </div>
                     </div>
@@ -43,7 +69,8 @@
             </div>
         </div>
     </div>
-    <!--FIN CONTENIDO-->
+    <!-- FIN DE CONTENIDO -->
+
 
     <!-- jQuery  -->
     <script src="plantilla/Admin/vertical/assets/js/jquery.min.js"></script>
@@ -54,6 +81,7 @@
 
     <!-- App js -->
     <script src="plantilla/Admin/vertical/assets/js/theme.js"></script>
-    
+
 </body>
+
 </html>

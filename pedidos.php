@@ -1,76 +1,80 @@
+<?php
+include("include/conexion.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="plantilla/Admin/vertical/assets/css/bootstrap.min.css" type="text/css"/>
+    <title>Pedidos</title>
+    <link href="plantilla/Admin/vertical/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/theme.min.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-    <?php 
-    //lenguaje php
+    <?php
+    // Lenguaje en php
     include("include/menu.php");
+
     ?>
 
-    <!--INICIO CONTENIDO-->
+    <!-- INICIO DE CONTENIDO -->
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <h4>REGISTRO DE PEDIDOS</h4>
+                        <?php include("include/modal_frm_reg_pedidos.php"); ?>
+                        <table id="basic-datatable" class="table dt-responsive nowrap">
+                            <thead>
+                                <th>Nro</th>
+                                <th>id_cliente</th>
+                                <th>fecha_hora_pedido</th>
+                                <th>fecha_entrega</th>
+                                <th>metodo_pago</th>
+                                <th>monto</th>
+                                <th>comprobante</th>
+                                <th>estado</th>
+                                <th>acciones</th>
+
+
+
+                            </thead>
+                            <tbody>
+                                <?php
+
+                                $consulta = "SELECT * FROM pedidos";
+                                $ejecutar = mysqli_query($conexion, $consulta);
+                                $contador = 0;
+
+                                while ($respuesta = mysqli_fetch_array($ejecutar)) {
+                                    $contador += 1;
+                                    echo "<tr>";
+                                    echo "<td>" . $contador . "</td>";
+                                    echo "<td>" . $respuesta['id_cliente'] . "</td>";
+                                    echo "<td>" . $respuesta['fecha_hora_pedido'] . "</td>";
+                                    echo "<td>" . $respuesta['fecha_entrega'] . "</td>";
+                                    echo "<td>" . $respuesta['metodo_pago'] . "</td>";
+                                    echo "<td>" . $respuesta['monto'] . "</td>";
+                                    echo "<td>" . $respuesta['comprobante'] . "</td>";
+                                    echo "<td>" . $respuesta['estado'] . "</td>";
+
+                                    echo "<td><button class='btn btn-success'>Editar</button> <button class='btn btn-danger'>Eliminar</button></td>";
+
+                                    echo "</tr>";
+                                }
+
+                                ?>
+                            </tbody>
+                        </table>
+
                         <div class="card">
                             <div class="card-body">
-                                <form action="operaciones/registrar_usuario.php" method="post">
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12">FECHA Y HORA DE PEDIDO:</label>
-                                        <input type="date"
-                                        name="fepe"
-                                        placeholder=""
-                                        class="form-control col-lg-3 col-md-3 col-sm-12" required>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12">FECHA DE ENTREGA:</label>
-                                        <input type="date"
-                                        name="feen"
-                                        placeholder=""
-                                        class="form-control col-lg-3 col-md-3 col-sm-12" required>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12">METODO DE PAGO:</label>
-                                        <input type="text"
-                                        name="meto"
-                                        placeholder=""
-                                        class="form-control col-lg-9 col-md-9 col-sm-12" required>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12">MONTO:</label>
-                                        <input type="number"
-                                        name="mon"
-                                        placeholder=""
-                                        class="form-control col-lg-3 col-md-3 col-sm-12" required>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12">COMPROBANTE:</label>
-                                        <input type="text"
-                                        name="comp"
-                                        placeholder=""
-                                        class="form-control col-lg-9 col-md-9 col-sm-12" required>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12">ESTADO:</label>
-                                        <input type="text"
-                                        name="esta"
-                                        placeholder=""
-                                        class="form-control col-lg-9 col-md-9 col-sm-12" required>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12"></label>
-                                        <button type="submit" class="btn btn-success">Guarda</button>
-                                    </div>
-                                </form>
+
                             </div>
                         </div>
                     </div>
@@ -78,7 +82,8 @@
             </div>
         </div>
     </div>
-    <!--FIN CONTENIDO-->
+    <!-- FIN DE CONTENIDO -->
+
 
     <!-- jQuery  -->
     <script src="plantilla/Admin/vertical/assets/js/jquery.min.js"></script>
@@ -89,6 +94,7 @@
 
     <!-- App js -->
     <script src="plantilla/Admin/vertical/assets/js/theme.js"></script>
-    
+
 </body>
+
 </html>

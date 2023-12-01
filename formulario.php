@@ -57,7 +57,7 @@ include("include/conexion.php");
                                             $ejecutar = mysqli_query($conexion, $consulta);
                                             $contador = 0;
                                             while ($respuesta = mysqli_fetch_array($ejecutar)) {
-                                                $contador = 1;
+                                                $contador += 1;
                                                 # code...
                                                 echo "<tr>";
                                                     echo "<td>".$contador."</td>";

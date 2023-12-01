@@ -2,13 +2,12 @@
 include("include/conexion.php");
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventas</title>
+    <title>Clientes</title>
     <link href="plantilla/Admin/vertical/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/theme.min.css" rel="stylesheet" type="text/css" />
@@ -26,24 +25,25 @@ include("include/conexion.php");
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                    <?php include("include/modal_frm_reg_ventas.php"); ?>
+                    <?php include("include/modal_frm_reg_clientes.php"); ?>
+
                     <table id="basic-datatable" class="table dt-responsive nowrap">
                                     <thead >
                                             <th>Nro</th>
-                                            <th>serie_venta</th>
-                                            <th>numero_venta</th>
-                                            <th>fecha_hora_venta</th>
-                                            <th>monto_total</th>
-                                            <th>cliente</th>
-                                            <th>usuario</th>
+                                            <th>ruc_dni</th>
+                                            <th>razon social</th>
+                                            <th>telefono</th>
+                                            <th>correo</th>
+                                            <th>direccion</th>
+                                            <th>direccion_envio</th>
+                                            
                                             <th>acciones</th>
-                                           
 
                                     </thead>
                                     <tbody>
                                         <?php
                                            
-                                            $consulta = "SELECT * FROM ventas";
+                                            $consulta = "SELECT * FROM cliente";
                                             $ejecutar = mysqli_query($conexion, $consulta);
                                             $contador=0;
                                            
@@ -51,24 +51,12 @@ include("include/conexion.php");
                                                 $contador += 1;
                                                 echo "<tr>";
                                                 echo "<td>".$contador."</td>";
-                                                echo "<td>".$respuesta['serie_venta']."</td>";
-                                                echo "<td>".$respuesta['numero_venta']."</td>";
-                                                echo "<td>".$respuesta['fecha_hora_venta']."</td>";
-                                                echo "<td>".$respuesta['monto_total']."</td>";
-                                                $id_cliente=$respuesta['id_cliente'];
-                                                $sql="SELECT razon_social FROM cliente WHERE id=$id_cliente";
-                                                $ejec=mysqli_query($conexion,$sql);
-                                                $resultado=mysqli_fetch_array($ejec);
-                                                echo "<td>".$resultado['razon_social']."</td>";
-
-                                                $id_usuario=$respuesta['id_usuario'];
-                                                $sql="SELECT apellidos_nombres FROM usuario WHERE id=$id_usuario";
-                                                $ejec=mysqli_query($conexion,$sql);
-                                                $resultado=mysqli_fetch_array($ejec);
-                                                echo "<td>".$resultado['apellidos_nombres']."</td>";
-                                   
-                                           
-                                                
+                                                echo "<td>".$respuesta['ruc_dni']."</td>";
+                                                echo "<td>".$respuesta['razon_social']."</td>";
+                                                echo "<td>".$respuesta['telefono']."</td>";
+                                                echo "<td>".$respuesta['correo']."</td>";
+                                                echo "<td>".$respuesta['direccion']."</td>";
+                                                echo "<td>".$respuesta['direccion_envio']."</td>";
                                                 echo "<td><button class='btn btn-success'>Editar</button> <button class='btn btn-danger'>Eliminar</button></td>";
   
                                                 echo "</tr>";
@@ -76,10 +64,10 @@ include("include/conexion.php");
 
                                         ?>
                                     </tbody>
-                                    </table>
-                       
-                        <div class="card">
-                            <div class="card-body">
+                                </table>
+
+                        
+
                                 
                             </div>
                         </div>

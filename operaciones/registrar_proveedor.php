@@ -2,18 +2,17 @@
 include("../include/conexion.php");
 //recibir la informacion
 
-$dni=$_POST['dni'];
+$ruc=$_POST['ruc'];
 $razon_social=$_POST['razon_social'];
-$telefono=$_POST['telefono'];
 $correo=$_POST['correo'];
+$telefono=$_POST['telefono'];
 $direccion=$_POST['direccion'];
-$direccio_envio=$_POST['direccion_envio'];
+$metodo_pago=$_POST['metodo_pago'];
 
 
 
-
-    $consulta="INSERT INTO cliente(ruc_dni, razon_social,telefono, correo, direccion, direccion_envio)
-VALUES ('$dni','$razon_social','$telefono','$correo', '$direccion', '$direccio_envio')";
+ $consulta="INSERT INTO proveedor(ruc, razon_social,correo,telefono,direccion,metodo_pago)
+VALUES('$ruc','$razon_social','$correo','$telefono', '$direccion','$metodo_pago')";
 
 $ejecutar= mysqli_query($conexion, $consulta);
 
@@ -32,7 +31,3 @@ if ($ejecutar) {
 //echo $telefono."<br>";
 //echo $direccion."<br>";
 //echo $fecha_naci."<br>";
-
-
-
-?>

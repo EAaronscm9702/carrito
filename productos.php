@@ -1,90 +1,99 @@
+<?php
+include("include/conexion.php");
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="plantilla/Admin/vertical/assets/css/bootstrap.min.css" type="text/css"/>
+    <title>productos</title>
+    <link href="plantilla/Admin/vertical/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/theme.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <?php 
-    //lenguaje php
+    // Lenguaje en php
     include("include/menu.php");
+
     ?>
 
-    <!--INICIO CONTENIDO-->
+    <!-- INICIO DE CONTENIDO -->
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <h4>REGISTRO DE PRODUCTOS</h4>
-                        <div class="card">
-                            <div class="card-body">
-                                <form action="operaciones/registrar_usuario.php" method="post">
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12">CODIGO:</label>
-                                        <input type="text"
-                                        name="codi"
-                                        placeholder=""
-                                        class="form-control col-lg-3 col-md-3 col-sm-12" required>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12">DESCRIPCIÓN:</label>
-                                        <input type="text"
-                                        name="descr"
-                                        placeholder=""
-                                        class="form-control col-lg-9 col-md-9 col-sm-12" required>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12">DETALLE:</label>
-                                        <input type="text"
-                                        name="detall"
-                                        placeholder=""
-                                        class="form-control col-lg-9 col-md-9 col-sm-12" required>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12">PRECIO DE COMPRA:</label>
-                                        <input type="number"
-                                        name="precom"
-                                        placeholder=""
-                                        class="form-control col-lg-3 col-md-3 col-sm-12" required>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12">PRECIO DE VENTA:</label>
-                                        <input type="number"
-                                        name="preven"
-                                        placeholder=""
-                                        class="form-control col-lg-3 col-md-3 col-sm-12" required>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12">STOCK:</label>
-                                        <input type="text"
-                                        name="stock"
-                                        placeholder=""
-                                        class="form-control col-lg-9 col-md-9 col-sm-12" required>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12">ESTADO:</label>
-                                        <input type="text"
-                                        name="estad"
-                                        placeholder=""
-                                        class="form-control col-lg-9 col-md-9 col-sm-12" required>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12">IMAGEN:</label>
-                                        <input type="text"
-                                        name="imag"
-                                        placeholder=""
-                                        class="form-control col-lg-9 col-md-9 col-sm-12" required>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-md-3 col-sm-12"></label>
-                                        <button type="submit" class="btn btn-success">Guarda</button>
-                                    </div>
-                                </form>
+                    <?php include("include/modal_frm_reg_productos.php"); ?>
+
+                    <table id="basic-datatable" class="table dt-responsive nowrap">
+                                    <thead >
+                                            <th>Nro</th>
+                                            <th>codigo</th>
+                                            <th>descripcion</th>
+                                            <th>detalle</th>
+                                            <th>categoria</th>
+                                            <th>precio_compra</th>
+                                            <th>precio_venta</th>
+                                            <th>stock</th>
+                                            <th>estado</th>
+                                            <th>imagen</th>
+                                            <th>proveedor</th>
+                                            <th>acciones</th>
+
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                           
+                                            $consulta = "SELECT * FROM producto";
+                                            $ejecutar = mysqli_query($conexion, $consulta);
+                                            $contador=0;
+                                           
+                                            while ($respuesta= mysqli_fetch_array($ejecutar)) {
+                                                $contador += 1;
+                                                echo "<tr>";
+                                                echo "<td>".$contador."</td>";
+                                                echo "<td>".$respuesta['codigo']."</td>";
+                                                echo "<td>".$respuesta['descripcion']."</td>";
+                                                echo "<td>".$respuesta['detalle']."</td>";
+                                                $id_categoria=$respuesta['id_categoria'];
+                                                $sql="SELECT nombre FROM categoria WHERE id=$id_categoria";
+                                                $ejec=mysqli_query($conexion,$sql);
+                                                $resultado=mysqli_fetch_array($ejec);
+                                                echo "<td>".$resultado['nombre']."</td>";
+                                                echo "<td>".$respuesta['precio_compra']."</td>";
+                                                echo "<td>".$respuesta['precio_venta']."</td>";
+                                                echo "<td>".$respuesta['stock']."</td>";
+                                                $estado=$respuesta['estado'];
+                                                if ($estado==1) {
+                                                    $res = "activo";
+                                                }else {
+                                                    $res="inactivo";
+                                                }
+                                                echo "<td>".$res."</td>";
+                                                echo "<td>".$respuesta['imagen']."</td>";
+                                                $id_proveedor=$respuesta['id_proveedor'];
+                                                $sql="SELECT razon_social FROM proveedor WHERE id=$id_proveedor";
+                                                $ejec=mysqli_query($conexion,$sql);
+                                                $resultado=mysqli_fetch_array($ejec);
+                                                echo "<td>".$resultado['razon_social']."</td>";
+                                                
+                                                echo "<td><button class='btn btn-success'>Editar</button> <button class='btn btn-danger'>Eliminar</button></td>";
+  
+                                                echo "</tr>";
+                                            }
+
+                                        ?>
+                                    </tbody>
+                                      </table>
+                        
+                               
+
+                                
+                              
                             </div>
                         </div>
                     </div>
@@ -92,7 +101,8 @@
             </div>
         </div>
     </div>
-    <!--FIN CONTENIDO-->
+     <!-- FIN DE CONTENIDO -->
+
 
     <!-- jQuery  -->
     <script src="plantilla/Admin/vertical/assets/js/jquery.min.js"></script>
@@ -103,6 +113,7 @@
 
     <!-- App js -->
     <script src="plantilla/Admin/vertical/assets/js/theme.js"></script>
-    
+
 </body>
+
 </html>
