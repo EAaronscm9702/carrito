@@ -71,6 +71,15 @@
                         <div class="sud_menu">
                             <ul>
                                 <li>
+                                <a href="venta.php">
+                                <img src="imagen/a.png" alt="" height="15" width="19">
+                                VENTA</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sud_menu">
+                            <ul>
+                                <li>
                                 <a href="detalle_venta.php">
                                 <img src="imagen/a.png" alt="" height="15" width="19">
                                 DETALLE VENTA</a>

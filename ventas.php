@@ -26,8 +26,11 @@ include("include/conexion.php");
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                    <?php include("include/modal_frm_reg_ventas.php"); ?>
-                    <table id="basic-datatable" class="table dt-responsive nowrap">
+                        <h4>RELACIÓN DE VENTA</h4>
+                        <a href="venta.php" class="btn btn-success">+ NUEVO</a>
+                        <div class="card">
+                            <div class="card-body">
+                                    <table id="basic-datatable" class="table dt-responsive nowrap">
                                     <thead >
                                             <th>Nro</th>
                                             <th>serie_venta</th>
