@@ -56,9 +56,10 @@ include("include/conexion.php");
                                             </select>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-md-4 col-sm-12">Productos: </label>
-                                            <input type="select" name="producto" class="form-control col-lg-4 col-md-4 col-sm-12" required placeholder="codigo producto">
-                                            <button class="btn btn-success col-lg-2 col-md-2 col-sm-4">Buscar</button>
+                                            <label class="col-lg-2 col-md-2 col-sm-6">Productos: </label>
+                                            <input type="number" name="producto" class="form-control col-lg-2 col-md-2 col-sm-6" required placeholder="codigo producto">
+                                            <label class="col-lg-1 md-lg-1 col-lg-1"></label>
+                                            <button class="btn btn-success col-lg-1 col-md-2 col-sm-2">Buscar</button>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-md-4 col-sm-12">Fecha y Hora: </label>
