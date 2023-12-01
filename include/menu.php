@@ -109,7 +109,7 @@
                         Envios</a>
                     </li>
                     <li>
-                        <a href="cliente.php">
+                        <a href="clientes.php">
                         <img src="imagen/cli.png" alt="" height="18" width="18">
                         Clientes</a>
                     </li>
