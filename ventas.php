@@ -27,7 +27,7 @@ include("include/conexion.php");
                 <div class="row">
                     <div class="col-12">
                         <h4>RELACIÓN DE VENTA</h4>
-                        <a href="venta.php" class="btn btn-success">+ NUEVO</a>
+                        <a href="venta.php" class="btn btn-success">READY +</a>
                         <div class="card">
                             <div class="card-body">
                                     <table id="basic-datatable" class="table dt-responsive nowrap">
