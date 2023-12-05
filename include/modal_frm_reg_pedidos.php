@@ -1,5 +1,5 @@
  <!-- Large modal -->
- <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target=".pedidos">+ Nuevo</button>
+ <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target=".pedidos">READY +</button>
 
 
 <div class="modal fade pedidos" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

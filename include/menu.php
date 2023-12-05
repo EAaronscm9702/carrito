@@ -38,7 +38,7 @@
                            Perfil
                         </a>
                         <a class="dropdown-item d-flex aling-items-center
-                        justify-content-between" href="javascript:void(0)">
+                        justify-content-between" href="login/index.php"><!--javascript:void(0)-->
                            Cerrar Sesión
                         </a>
                     </div>

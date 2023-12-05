@@ -40,7 +40,8 @@ include("include/conexion.php");
                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-md-4 col-sm-12">DNI: </label>
-                                            <input type="number" name="dni" class="form-control col-lg-4 col-md-4 col-sm-12" required placeholder="dni cliente">
+                                            <input type="number" name="dni" class="form-control col-lg-3 col-md-3 col-sm-12" required placeholder="dni cliente">
+                                            <label class="col-lg-1 md-lg-1 col-lg-1"></label>
                                             <button class="btn btn-success col-lg-2 col-md-2 col-sm-4">Buscar</button>
                                         </div>
                                         <div class="form-group row">
@@ -56,10 +57,10 @@ include("include/conexion.php");
                                             </select>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-2 col-md-2 col-sm-6">Productos: </label>
-                                            <input type="number" name="producto" class="form-control col-lg-2 col-md-2 col-sm-6" required placeholder="codigo producto">
+                                            <label class="col-lg-4 col-md-4 col-sm-12">Productos: </label>
+                                            <input type="number" name="producto" class="form-control col-lg-3 col-md-3 col-sm-12" required placeholder="codigo producto">
                                             <label class="col-lg-1 md-lg-1 col-lg-1"></label>
-                                            <button class="btn btn-success col-lg-1 col-md-2 col-sm-2">Buscar</button>
+                                            <button class="btn btn-success col-lg-2 col-md-2 col-sm-4">Buscar</button>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-md-4 col-sm-12">Fecha y Hora: </label>
@@ -73,7 +74,7 @@ include("include/conexion.php");
                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                         <table class="table table-bordered mb-0">
                                             <thead>
-                                                <tr>
+                                                <tr class="table-success">
                                                     <th colspan="6" class="text-center">PRODUCTOS</th>
                                                 </tr>
                                                 <tr>

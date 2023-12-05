@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="modal" data-target=".registrar">READY +</button>
+<button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target=".registrar">READY +</button>
 
 
 <div class="modal fade registrar" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

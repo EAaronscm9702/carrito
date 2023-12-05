@@ -47,23 +47,23 @@
                                             <div class="form-group">
                                                 <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Contraseña">
                                             </div>
-                                            <a href="" class="btn btn-success btn-block waves-effect waves-light"> acceder </a>
+                                            <a href="../formulario.php" class="btn btn-success btn-block waves-effect waves-light"> acceder </a>
 
                                             <div class="text-center mt-4">
                                                 <h5 class="text-muted font-size-16">Iniciar sesión usando</h5>
                                             
                                                 <ul class="list-inline mt-3 mb-0">
                                                     <li class="list-inline-item">
-                                                        <a href="javascript: void(0);" class="social-list-item border-primary text-primary"><i class="mdi mdi-facebook"></i></a>
+                                                        <a href="https://www.facebook.com/" class="social-list-item border-primary text-primary"><i class="mdi mdi-facebook"></i></a>
                                                     </li>
                                                     <li class="list-inline-item">
-                                                        <a href="javascript: void(0);" class="social-list-item border-danger text-danger"><i class="mdi mdi-google"></i></a>
+                                                        <a href="https://www.google.com/intl/es-419/gmail/about/" class="social-list-item border-danger text-danger"><i class="mdi mdi-google"></i></a>
                                                     </li>
                                                     <li class="list-inline-item">
-                                                        <a href="javascript: void(0);" class="social-list-item border-info text-info"><i class="mdi mdi-twitter"></i></a>
+                                                        <a href="https://twitter.com/?lang=es" class="social-list-item border-info text-info"><i class="mdi mdi-twitter"></i></a>
                                                     </li>
                                                     <li class="list-inline-item">
-                                                        <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github-circle"></i></a>
+                                                        <a href="https://github.com/" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github-circle"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>

@@ -36,7 +36,7 @@ include("include/conexion.php");
                             <div class="card-body">
                                 <table id="basic-datatable" class="table dt-responsive nowrap">
                                     <thead>
-                                        <tr >
+                                        <tr class="table-success">
                                             <th>Nro</th>
                                             <th>Foto</th>
                                             <th>DNI</th>
@@ -70,7 +70,7 @@ include("include/conexion.php");
                                                     echo "<td>".$respuesta['activo']."</td>";
                                                     echo "<td>".$respuesta['fecha_nacimiento']."</td>";
                                                     echo "<td>".$respuesta['id_rol']."</td>";
-                                                    echo "<td><button class='btn btn-success'>EDITAR</button><button class='btn btn-danger'>BORRAR</button></td>";
+                                                    echo "<td><button class='btn btn-warning'>EDITAR</button><button class='btn btn-danger'>BORRAR</button></td>";
                                                 echo "</tr>";
                                             }
                                         ?>
