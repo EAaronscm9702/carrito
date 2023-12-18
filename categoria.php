@@ -13,6 +13,7 @@ include("include/conexion.php");
     <link href="plantilla/Admin/vertical/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/theme.min.css" rel="stylesheet" type="text/css" />
+    <title>EAaron</title>
 </head>
 
 <body>
@@ -50,7 +51,7 @@ include("include/conexion.php");
                                     echo "<tr>";
                                     echo "<td>" . $contador . "</td>";
                                     echo "<td>" . $respuesta['nombre'] . "</td>";
-                                    echo "<td><button class='btn btn-success'>Editar</button> <button class='btn btn-danger'>Eliminar</button></td>";
+                                    echo "<td><button class='btn btn-warning'>Editar</button> <button class='btn btn-danger'>Eliminar</button></td>";
 
                                     echo "</tr>";
                                 }
